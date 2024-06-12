@@ -9,8 +9,6 @@ import java.util.Set;
 import java.util.HashSet;
 
 @Entity(name = "ECOM_USER")
-@Getter
-@Setter
 public class User extends BaseModel
 {
     private String email;
@@ -18,4 +16,28 @@ public class User extends BaseModel
 
     @ManyToMany
     private Set<Role> roles=new HashSet<>();
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
 }

@@ -1,20 +1,18 @@
 package com.users.userservice.dtos;
 
 
-import com.users.userservice.model.BaseModel;
 import com.users.userservice.model.Role;
 import com.users.userservice.model.User;
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToMany;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.HashSet;
 import java.util.Set;
 
-@Getter
+
 @Setter
-public class UserDto extends BaseModel
+@Getter
+public class UserDto
 {
     private String email;
     private Set<Role> roles=new HashSet<>();
@@ -25,4 +23,5 @@ public class UserDto extends BaseModel
         userDto.setRoles(user.getRoles());
         return userDto;
     }
+
 }
